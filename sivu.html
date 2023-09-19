@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <title>Telineosalaskuri</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src=https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href=https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <!-- First column -->
+      <div class="col-sm-3">
+        <h3>Sarake 1</h3>
+        <p>Tänne jotain kivaa</p>
+      </div>
+      
+      <!-- Second column -->
+      <div class="col-sm-6 bg-light">
+        <h3>Jannen telineosalaskuri</h3>
+        <div class="col-sm-6">
+        <p>Valitse lohkojako alasvetovalikosta</p>
+        <div class="btn-group">
+          <button id="blockButton" type="button" class="btn btn-primary dropdown-toggle btn-sm" data-bs-toggle="dropdown" aria-expanded="false">Jako</button>
+          <ul class="dropdown-menu dropdown-menu-scrollable">
+            <li><a class="dropdown-item multiplier" data-value="0.732">0.732</a></li>
+            <li><a class="dropdown-item multiplier" data-value="1.088">1.088</a></li>
+            <li><a class="dropdown-item multiplier" data-value="1.4">1.4</a></li>
+            <li><a class="dropdown-item multiplier" data-value="2.072">2.072</a></li>
+            <li><a class="dropdown-item multiplier" data-value="2.572">2.572</a></li>
+            <li><a class="dropdown-item multiplier" data-value="3.072">3.072</a></li>
+          </ul>
+       </div>
+        <br>
+        <br>
+        <p>Valitse telineen pituus</p>
+        <div class="btn-group2">
+          <button id="lengthButton" type="button" class="btn btn-primary dropdown-toggle btn-sm" data-bs-toggle="dropdown" aria-expanded="false">Pituus</button>
+          <ul id="lengthDropdown" class="dropdown-menu dropdown-menu-scrollable">
+          </ul>
+       </div>
+        <br>
+        <p>Valitse telineen syvyys</p>
+        <div class="btn-group3">
+          <button id="depthButton" type="button" class="btn btn-primary dropdown-toggle btn-sm" data-bs-toggle="dropdown" aria-expanded="false">Syvyys</button>
+          <ul class="dropdown-menu">
+            <li><a id="depthDropdown" class="dropdown-item depth" data-value="0.732">0.732</a></li>
+            <li><a id="depthDropdown" class="dropdown-item depth" data-value="1.088">1.088</a></li>
+            <li><a id="depthDropdown" class="dropdown-item depth" data-value="1.4">1.4</a></li>
+            <li><a id="depthDropdown" class="dropdown-item depth" data-value="2.072">2.072</a></li>
+            <li><a id="depthDropdown" class="dropdown-item depth" data-value="2.572">2.572</a></li>
+            <li><a id="depthDropdown" class="dropdown-item depth" data-value="3.072">3.072</a></li>
+          </ul>
+       </div>
+        <br>
+        <p>Syötä telineen korkeus</p>
+        <input type="number" id="height" class="form-control" placeholder="m" required>
+        </div>
+        <br>
+        <br>
+        <button id="calculateButton" type="button" class="btn btn-success btn-sm" onclick="calculate()">Laske</button> 
+        <button id="resetButton" type="button" class="btn btn-danger btn-sm" onclick="reset()">Nollaa</button>
+      <br>
+      <br>
+      <div class="results">
+        <p id="result">Tulokset näytetään täällä</p>
+      </div>  
+      </div>
+      <!-- Third column -->
+      <div class="col-sm-3">
+        <h3>Sarake 3</h3>
+        <p>Tännekin jotain kivaa</p>
+      </div>
+    </div>
+  </div>
+
+
+    <!-- Virheilmoitus jos kaikkia arvoja ei annettu -->
+
+
+<div class="modal fade" id="error" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <p>Syötä tarvittavat tiedot jatkaaksesi</p>
+      </div>
+      <div class="modal-footer">
+        <button onclick="hideModal(error)" type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">OK!</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- Onnistuneesta laskusta -->
+
+
+  
+  <!-- jQuery and Bootstrap JS -->
+  <script src=https://code.jquery.com/jquery-3.2.1.slim.min.js></script>
+  <script src=https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js></script>
+  <script src="laskuri.js"></script>
+</body>
+</html>
