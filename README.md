@@ -1,0 +1,2 @@
+# telineosalaskuri
+Laskee telineosien tarpeen
