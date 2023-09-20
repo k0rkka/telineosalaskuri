@@ -3,6 +3,7 @@
 
 const parts = [[]]; // Valmis osalista
 var standards = [3, 2.5, 2, 1.5, 1, 0.5]; // Pystysalkojen osalista
+ var ledgers = [0.732, 1.088, 1.4, 2.072, 2.572, 3.072] // Jokkien osalista
 
 //--------------------- Alasvetovalikot, tekstikenttä ja painikkeet------------------------//
 
@@ -138,7 +139,15 @@ function calculateStandards(roundedHeight, baseCollar) {
   }
 }
 
-
+// Jokkien laskukaava
+function calculateLedgers(roundedHeight, blocks, depth) {
+  ledgersCount = (roundedHeight / 2 + 1) * (blocks +1)
+  for (i = 0; i < ledgers.length; i++) {
+    if (ledgers[i] == depth) {
+      parts.push(["U-Jokka " + depth, ledgersCount])
+    }
+  }
+}
 // Runko telineosien laskulle
 
   function calculate() {
@@ -154,12 +163,13 @@ function calculateStandards(roundedHeight, baseCollar) {
     if (block && length && depth && height) {
       let baseCollar = calculateStarters(blocks)
       calculateStandards(roundedHeight, baseCollar);
+      calculateLedgers(roundedHeight, blocks, depth);
     } else {
       showModal("#error");
       reset();
     }
 
-
+// Tee seuraavaksi funktio juoksujen laskuja varten
 
     /* console.log("Lohkojako" + block);
     console.log("Pituus: " + length);
