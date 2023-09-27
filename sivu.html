@@ -58,8 +58,14 @@
         <br>
         <p>Syötä telineen korkeus</p>
         <input type="number" id="height" class="form-control" placeholder="m" required>
-        </div>
         <br>
+        <p>Kaiteet ylimmällä tasolla</p>
+          <div>
+            <input type="radio" value="Kyllä" data-value="true"> <p>Kyllä</p>
+          </div>
+          <br>
+          <input type="radio" value="Ei" data-value="false">
+        </div>
         <br>
         <button id="calculateButton" type="button" class="btn btn-success btn-sm" onclick="calculate()">Laske</button> 
         <button id="resetButton" type="button" class="btn btn-danger btn-sm" onclick="reset()">Nollaa</button>
