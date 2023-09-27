@@ -60,11 +60,14 @@
         <input type="number" id="height" class="form-control" placeholder="m" required>
         <br>
         <p>Kaiteet ylimmällä tasolla</p>
-          <div>
-            <input type="radio" value="Kyllä" data-value="true"> <p>Kyllä</p>
+          <div class="form-check">
+            <input type="radio" class="form-check-input" id="kylla" value="Kyllä" data-value="true">
+            <label class="form-check-label" for="kylla">Kyllä</label>
           </div>
-          <br>
-          <input type="radio" value="Ei" data-value="false">
+          <div class="form-check">
+            <input type="radio" class="form-check-input" id="ei" value="ei" data-value="false">
+            <label class="form-check-label" for="ei">Ei</label>
+          </div>
         </div>
         <br>
         <button id="calculateButton" type="button" class="btn btn-success btn-sm" onclick="calculate()">Laske</button> 
