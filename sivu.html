@@ -59,25 +59,26 @@
         <p>Syötä telineen korkeus</p>
         <input type="number" id="height" class="form-control" placeholder="m" required>
         <br>
-        <p>Kaiteet ylimmällä tasolla</p>
-          <div class="form-check">
-            <input type="radio" class="form-check-input" id="railsYes" value="Kyllä" data-value="true">
-            <label class="form-check-label" for="railsYes">Kyllä</label>
-          </div>
-          <div class="form-check">
-            <input type="radio" class="form-check-input" id="railsNo" value="ei" data-value="false">
-            <label class="form-check-label" for="railsNo">Ei</label>
-          </div>
-          <br>
-          <p>Konsolit</p>
-          <div class="form-check">
-            <input type="radio" class="form-check-input" id="consoleYes" value="Kyllä" data-value="true">
-            <label class="form-check-label" for="consoleYes">Kyllä</label>
-          </div>
-          <div class="form-check">
-            <input type="radio" class="form-check-input" id="consoleNo" value="Ei" data-value="false">
-            <label class="form-check-label" for="consoleYes">Ei</label>
-          </div>
+<p>Kaiteet ylimmällä tasolla</p>
+<div class="form-check">
+  <input type="radio" class="form-check-input" id="railsYes" name="kaiteet" value="Kyllä" data-value="true">
+  <label class="form-check-label" for="railsYes">Kyllä</label>
+</div>
+<div class="form-check">
+  <input type="radio" class="form-check-input" id="railsNo" name="kaiteet" value="Ei" data-value="false" checked>
+  <label class="form-check-label" for="railsNo">Ei</label>
+</div>
+<br>
+<p>Konsolit</p>
+<div class="form-check">
+  <input type="radio" class="form-check-input" id="consoleYes" name="konsolit" value="Kyllä" data-value="true">
+  <label class="form-check-label" for="consoleYes">Kyllä</label>
+</div>
+<div class="form-check">
+  <input type="radio" class="form-check-input" id="consoleNo" name="konsolit" value="Ei" data-value="false" checked>
+  <label class="form-check-label" for="consoleNo">Ei</label>
+</div>
+
         </div>
         <br>
         <button id="calculateButton" type="button" class="btn btn-success btn-sm" onclick="calculate()">Laske</button> 
