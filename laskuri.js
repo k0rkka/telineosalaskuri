@@ -51,6 +51,12 @@ const inputHeight = document.getElementById("height");
 const calculateButton = document.getElementById("calculateButton");
 const resetButton = document.getElementById("resetButton");
 
+// Radio painikkeet
+
+const consoleYesRadio = document.getElementById("consoleYes");
+const consoleNoRadio = document.getElementById("consoleNo");
+const railsYesRadio = document.getElementById("railsYes")
+const railsNoRadio = document.getElementById("railsNo")
 
 //----------------------Funktiot eri laskentoihin----------------------------//
 
@@ -127,14 +133,14 @@ function calculateStarters(blocks) {
 
 // Telineen pystysalkojen lasku
 function calculateStandards(roundedHeight, baseCollar) {
-  let remainder = roundedHeight; // Alustetaan jakojäännös alkuperäisellä korkeudella
+  let remainder = roundedHeight;
 
   for (let i = 0; i < standards.length; i++) {
     let standard = standards[i];
-    let standardCount = Math.round(remainder / standard); // Kuinka monta koko osaa mahtuu
+    let standardCount = Math.round(remainder / standard);
     if (standardCount > 0) {
       parts.push(["Pystysalko " + standard, standardCount * baseCollar]);
-      remainder = remainder % standard; // Päivitetään jakojäännös
+      remainder = remainder % standard;
     }
   }
 }
@@ -148,10 +154,39 @@ function calculateLedgers(roundedHeight, blocks, depth) {
     }
   }
 }
+
+// Konsoli radiopainikkeiden tarkastus
+
+function checkConsoleRadioButtons() {
+  if (consoleYesRadio.checked) {
+    return true;
+  }
+  else if (consoleNoRadio.checked) {
+    return false;
+  }
+  else {
+    return false;
+  }
+}
+
+// Kaiteiden radiopainikkeiden tarkastus
+
+function checkRailsRadioButtons() {
+  if (railsYesRadio.checked) {
+    return true;
+  }
+  else if (railsNoRadio.checked) {
+    return false;
+  }
+  else {
+    return false;
+  }
+}
 // Runko telineosien laskulle
 
   function calculate() {
-    
+    let boolConsoles = checkConsoleRadioButtons();
+    let boolRails = checkRailsRadioButtons();
     let block = parseFloat(document.getElementById("blockButton").textContent);
     var length =  parseFloat(document.getElementById("lengthButton").textContent);
     var depth = parseFloat(document.getElementById("depthButton").textContent);
@@ -168,16 +203,6 @@ function calculateLedgers(roundedHeight, blocks, depth) {
       showModal("#error");
       reset();
     }
-
-// Tee seuraavaksi funktio juoksujen laskuja varten
-
-    /* console.log("Lohkojako" + block);
-    console.log("Pituus: " + length);
-    console.log("Syvyys: " + depth);
-    console.log("Korkeus: " + height);
-    console.log("Lohkojen määrä: " + blocks)
-    */
-
     printParts();
   }
 
